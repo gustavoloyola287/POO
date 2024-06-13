@@ -6,22 +6,21 @@ class Producto():
         self.precio = precio
         self.cantidad = cantidad
     
-    def get_nombre(self):
-        return self.nombre
-    def get_precio(self):
-        return self.precio
-    def get_cantidad(self):
-        return self.cantidad
-    
     def mostrar_informacion(self):
-        print("El producto se llama: ",self.get_nombre(),"y cuesta: ",self.get_precio(),"pesos")
-    
-nombre = input("Ingrese nombre del producto: ")
-precio = input("Ingrese precio del producto: ")
-cantidad = input("Ingrese cantidad del producto: ")
+        print("El producto se llama: ",self.nombre)
+        print("cuesta: ",self.precio)
+        print("stock: ",self.cantidad)
 
-mi_producto = Producto(nombre, precio, cantidad)
-mi_producto.mostrar_informacion()
-
-#print(mi_producto.mostrar_producto())
-    
+class Alimento(Producto):
+    def __init__(self, nombre, precio, cantidad, fecha_expiracion):
+        super().__init__(nombre, precio, cantidad)
+        self.fecha_expiracion = fecha_expiracion
+       
+        
+    def mostrar_expiracion(self):
+        print("vence: ",self.fecha_expiracion)  
+        
+  
+alimento = Alimento("harina","70","12","12-12-24")     
+alimento.mostrar_informacion()
+alimento.mostrar_expiracion()     
