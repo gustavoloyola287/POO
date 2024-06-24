@@ -9,4 +9,5 @@ class Electronico(Producto):
         self.modelo = modelo
         
     def mostrar_electronico(self):
+        super().mostrar_informacion
         print("marca: ",self.marca,"\nmodelo: ",self.modelo)   
